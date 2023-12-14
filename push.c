@@ -22,7 +22,7 @@ void s_push(stack_b **head, unsigned int line_co)
 			fprintf(stderr, "L%d: usage: push integer\n", line_co);
 			fclose(test.file);
 			free(test.content);
-			free_stack(*head);
+			delete_stack(*head);
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -31,13 +31,13 @@ void s_push(stack_b **head, unsigned int line_co)
 		fprintf(stderr, "L%d: usage: push integer\n", line_co);
 		fclose(test.file);
 		free(test.content);
-		free_stack(*head);
+		delete_stack(*head);
 		exit(EXIT_FAILURE);
 	}
 	s = atoi(test.arg);
 
 	if (test.lifi == 0)
-		addnode(head, s);
+		inc_node(head, s);
 	else
-		addqueue(head, s);
+		in_queue(head, s);
 }
