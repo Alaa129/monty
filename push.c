@@ -9,19 +9,19 @@ void s_push(stack_b **head, unsigned int counter)
 {
 	int s, i = 0, u_flag = 0;
 
-	if (bus.arg)
+	if (test.arg)
 	{
-		if (bus.arg[0] == '-')
+		if (test.arg[0] == '-')
 			i++;
-		for (; bus.arg[i] != '\0'; i++)
+		for (; test.arg[i] != '\0'; i++)
 		{
-			if (bus.arg[i] > 57 || bus.arg[i] < 48)
+			if (test.arg[i] > 57 || test.arg[i] < 48)
 				u_flag = 1; }
 		if (u_flag == 1)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", counter);
-			fclose(bus.file);
-			free(bus.content);
+			fclose(test.file);
+			free(test.content);
 			free_stack(*head);
 			exit(EXIT_FAILURE);
 		}
@@ -29,14 +29,14 @@ void s_push(stack_b **head, unsigned int counter)
 	else
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", counter);
-		fclose(bus.file);
-		free(bus.content);
+		fclose(test.file);
+		free(test.content);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	s = atoi(bus.arg);
+	s = atoi(test.arg);
 
-	if (bus.lifi == 0)
+	if (test.lifi == 0)
 		addnode(head, s);
 	else
 		addqueue(head, s);
