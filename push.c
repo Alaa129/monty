@@ -5,7 +5,7 @@
  * @counter: line_number
  * Return: no return
 */
-void s_push(stack_b **head, unsigned int counter)
+void s_push(stack_b **head, unsigned int line_co)
 {
 	int s, i = 0, u_flag = 0;
 
@@ -19,7 +19,7 @@ void s_push(stack_b **head, unsigned int counter)
 				u_flag = 1; }
 		if (u_flag == 1)
 		{
-			fprintf(stderr, "L%d: usage: push integer\n", counter);
+			fprintf(stderr, "L%d: usage: push integer\n", line_co);
 			fclose(test.file);
 			free(test.content);
 			free_stack(*head);
@@ -28,7 +28,7 @@ void s_push(stack_b **head, unsigned int counter)
 	}
 	else
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", counter);
+		fprintf(stderr, "L%d: usage: push integer\n", line_co);
 		fclose(test.file);
 		free(test.content);
 		free_stack(*head);
