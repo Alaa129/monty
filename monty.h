@@ -43,8 +43,8 @@ extern test_t test;
  * @opcode: the opcode
  * @f: function to handle the opcode
  *
- * Description: opcode 
- * for stack, queues, LIFO, FIFO 
+ * Description: opcode
+ * for stack, queues, LIFO, FIFO
  */
 typedef struct instruct_s
 {
