@@ -41,7 +41,7 @@ extern test_t test;
 
 void s_push(stack_b **head, unsigned int line_co);
 void s_pall(stack_b **head, unsigned int line_co);
-void free_stack(stack_b *head);
+void delete_stack(stack_b *head);
 void addnode(stack_b **head, int n);
 void addqueue(stack_b **head, int n);
 #endif
